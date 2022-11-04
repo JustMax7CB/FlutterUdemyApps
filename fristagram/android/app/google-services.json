@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "72732508091",
+    "project_id": "finstagram-udemy-tutorial",
+    "storage_bucket": "finstagram-udemy-tutorial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72732508091:android:6cb392b2e79ed058f04e9e",
+        "android_client_info": {
+          "package_name": "com.example.fristagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72732508091-gat2b4h0m6o3e9784f22p1c1fsni58r4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5HW_v8glp8Vw5NvWBkckwQCfGYKNFWqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72732508091-gat2b4h0m6o3e9784f22p1c1fsni58r4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
