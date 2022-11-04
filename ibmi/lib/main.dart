@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      title: "IMBI",
+      title: "IBMI",
       routes: {
         '/': (BuildContext context) => MainPage(),
       },
