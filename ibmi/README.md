@@ -1,6 +1,6 @@
 # imbi
 
-A new Flutter project.
+BMI Calculator App using the Cupertino iOS style Widgets
 
 ## Getting Started
 
