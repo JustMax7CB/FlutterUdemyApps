@@ -1,8 +1,12 @@
+import 'dart:developer' as developer;
+
 import 'dart:math';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:imbi/widgets/info_card.dart';
+
+import '../utils/calculator.dart';
 
 class BMIPage extends StatefulWidget {
   @override
@@ -76,6 +80,7 @@ class _BMIPageState extends State<BMIPage> {
               SizedBox(
                 width: 50,
                 child: CupertinoDialogAction(
+                  key: const Key("age_minus"),
                   onPressed: () {
                     setState(() {
                       _age--;
@@ -91,6 +96,7 @@ class _BMIPageState extends State<BMIPage> {
               SizedBox(
                 width: 50,
                 child: CupertinoDialogAction(
+                  key: const Key("age_plus"),
                   onPressed: () {
                     setState(() {
                       _age++;
@@ -141,6 +147,7 @@ class _BMIPageState extends State<BMIPage> {
               SizedBox(
                 width: 50,
                 child: CupertinoDialogAction(
+                  key: const Key("weight_minus"),
                   onPressed: () {
                     setState(
                       () {
@@ -158,6 +165,7 @@ class _BMIPageState extends State<BMIPage> {
               SizedBox(
                 width: 50,
                 child: CupertinoDialogAction(
+                  key: const Key("weight_plus"),
                   onPressed: () {
                     setState(
                       () {
@@ -181,7 +189,7 @@ class _BMIPageState extends State<BMIPage> {
 
   Widget _heightSelectContainer() {
     return InfoCard(
-      height: _deviceHeight! * 0.15,
+      height: _deviceHeight! * 0.18,
       width: _deviceWidth! * 0.9,
       child: Column(
         children: [
@@ -262,7 +270,7 @@ class _BMIPageState extends State<BMIPage> {
         ),
         onPressed: () {
           if (_height > 0 && _weight > 0 && _age > 0) {
-            double _bmi = _weight / pow(_height / 100, 2);
+            double _bmi = calculateBMI(_height, _weight);
             _showResultDialog(_bmi);
           }
         },
@@ -307,6 +315,6 @@ class _BMIPageState extends State<BMIPage> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('bmi_date', DateTime.now().toString());
     await prefs.setStringList('bmi_data', <String>[_bmi, _status]);
-    print("BMI result Saved!");
+    developer.log("\x1B[32mBMI result Saved!\x1B[0m");
   }
 }
